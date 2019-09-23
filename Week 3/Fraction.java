@@ -9,14 +9,14 @@ public class Fraction {
         return numerator;
     }
     public int getDenominator() {
-        return denominator;
+        return (this.denominator!=0) ? denominator : 1;
     }
     public void setNumerator(int _numerator) {
         this.numerator = _numerator;
     }
     public void setDenominator(int _denominator) {
         if (denominator!=0) this.denominator = _denominator;
-        else return;
+        else this.denominator = 1;
     }
 
     Fraction() {
@@ -74,14 +74,15 @@ public class Fraction {
         Fraction SUB = new Fraction(_numerator,_denominator);
         return SUB.reduce();
     }
-    public Fraction multiple(Fraction other) {
+
+    public Fraction multiply(Fraction other) {
         int _numerator = this.getNumerator()*other.getNumerator();
         int _denominator = this.getDenominator()*other.getDenominator();
         Fraction MUL = new Fraction(_numerator,_denominator);
         return MUL.reduce();
     }
     public Fraction divide(Fraction other) {
-        if (other.getNumerator()!=0) {
+        if (other.getNumerator()!=0 && this.getDenominator()!=0 && other.getDenominator()!=0) {
             int _numerator = this.getNumerator()*other.getDenominator();
             int _denominator = this.getDenominator()*other.getNumerator();
             Fraction DIV = new Fraction(_numerator,_denominator);
@@ -100,21 +101,19 @@ public class Fraction {
     }
 
     public static void main(String[] args) {
-        Random rd = new Random();
-        Fraction frac = new Fraction();
-        Fraction Frac1 = new Fraction(rd.nextInt(100), rd.nextInt(100));
+        Fraction Frac1 = new Fraction(7, 35);
         System.out.println("Frac1 before reduce is: " + toStringFraction(Frac1));
         Frac1.reduce();
         System.out.println("Frac1 after reduce is: " + toStringFraction(Frac1));
 
-        Fraction Frac2 = new Fraction(rd.nextInt(200), rd.nextInt(200));
+        Fraction Frac2 = new Fraction(55, 11);
         System.out.println("Frac2 before reduce is: " + toStringFraction(Frac2));
         Frac2.reduce();
         System.out.println("Frac2 after reduce is: " + toStringFraction(Frac2) + "\n");
 
         System.out.println("Sum of Frac1 & Frac2 is: " + toStringFraction(Frac1.add(Frac2)));
         System.out.println("Subtract of Frac1 & Frac2 is: " + toStringFraction(Frac1.subtract(Frac2)));
-        System.out.println("Multiple of Frac1 & Frac2 is: " + toStringFraction(Frac1.multiple(Frac2)));
+        System.out.println("Multiple of Frac1 & Frac2 is: " + toStringFraction(Frac1.multiply(Frac2)));
         System.out.println("Divide of Frac1 & Frac2 is: " + toStringFraction(Frac1.divide(Frac2)));
         System.out.println("Compare of Frac1 & Frac2 is: " + Frac1.equals(Frac2));
     }
