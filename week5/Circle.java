@@ -1,19 +1,22 @@
 package com.week5;
 
 public class Circle {
-    protected double radius = 1.8;
-    protected String color = ”red”;
+    private double radius = 1.8;
+    private String color = "red";
+    protected final double PI = 3.14;
+    
     public Circle(){
     }
-    public Circle(double radilus){
-        this.radius = radilus;
+    public Circle(double _radius){
+        this.radius = _radius;
     }
-    public Circle(double radilus, String colour){
-        this.radius = radilus;
+    public Circle(double _radius, String colour){
+        this.radius = _radius;
         this.color = colour;
     }
-    public void setRadius (double radilus) {
-        this.radius = radilus;
+    
+    public void setRadius (double _radius) {
+        this.radius = _radius;
     }
     public double getRadius() {
         return radius;
@@ -24,12 +27,11 @@ public class Circle {
     public String getColor() {
         return color;
     }
+    
     public double getArea() {
-
+        return this.PI * this.radius * this.radius;
     }
-    public String toString()ơ{
-
-    }
-    public static void  main (String args[]){
+    public String toString(){
+        return "Circle[radius=" + this.radius + ",color=" + this.color + "]";
     }
 }
