@@ -1,5 +1,3 @@
-package com.week5;
-
 public class Cylinder extends Circle{
     private double height = 1.0;
     public Cylinder(){
@@ -23,13 +21,12 @@ public class Cylinder extends Circle{
         this.height = _height;
     }
     public double getVolume() {
-        return super.getArea() * this.height;
+        return super.getArea() * this.getHeight();
     }
     public String toString() {
-        return "Cylinder[" + super.toString() + ",height=" + this.height +"]";
+        return "Cylinder[" + super.toString() + ",height=" + this.getHeight() +"]";
     }
     public double getArea() {
-        return super.getArea() * 2 + 2 * this.PI * super.getRadius() * this.height;
+        return super.getArea() * 2 + 2 * this.PI * super.getRadius() * this.getHeight();
     }
 }
-
