@@ -1,10 +1,8 @@
-package com.week5;
-
 public class Circle {
-    private double radius = 1.8;
+    private double radius = 1.0;
     private String color = "red";
     protected final double PI = 3.14;
-    
+
     public Circle(){
     }
     public Circle(double _radius){
@@ -14,7 +12,7 @@ public class Circle {
         this.radius = _radius;
         this.color = colour;
     }
-    
+
     public void setRadius (double _radius) {
         this.radius = _radius;
     }
@@ -27,11 +25,10 @@ public class Circle {
     public String getColor() {
         return color;
     }
-    
     public double getArea() {
-        return this.PI * this.radius * this.radius;
+        return this.PI * this.getRadius() * this.getRadius();
     }
     public String toString(){
-        return "Circle[radius=" + this.radius + ",color=" + this.color + "]";
+        return "Circle[radius=" + this.getRadius() + ",color=" + this.getColor() + "]";
     }
 }
