@@ -1,7 +1,7 @@
 package com.week5;
 
 public class Circle extends Shape {
-    protected final double PI = 3.14;
+    protected final double PI = 3.1415926535897925;
     protected double radius;
     public Circle(){
         super();
@@ -37,5 +37,4 @@ public class Circle extends Shape {
     public String toString() {
         return "Circle[radius=" + this.radius + ",color=" + this.getColor() + ",filled=" + this.isFilled() + "]";
     }
-
 }
