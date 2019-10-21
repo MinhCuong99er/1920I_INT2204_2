@@ -1,5 +1,3 @@
-package com.week5;
-
 public class Rectangle extends Shape {
     protected double width;
     protected double length;
@@ -86,18 +84,3 @@ public class Rectangle extends Shape {
             if(!this.topLeft.equals(other.topLeft)) return false;
             return true;
         }
-        else return false;
-    }
-    public int hashCode() {
-        int prime = 19;
-        int result = 1;
-        result = result * prime + Double.valueOf(this.width).hashCode();
-        result = result * prime + Double.valueOf(this.length).hashCode();
-        System.out.println(result * prime + this.topLeft.hashCode());
-        return result * prime + this.topLeft.hashCode();
-    }
-    public static String toString() {
-        return "Rectangle[topLeft=" + this.topLeft.toString() + ",width=" + this.width + ",length=" + this.length + ",color=" + this.getColor() + ",filled=" + this.isFilled() + "]";
-    }
-
-}
