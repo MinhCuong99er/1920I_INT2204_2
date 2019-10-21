@@ -68,11 +68,11 @@ public class Rectangle extends Shape {
         this.length = (_length > 0) ? _length : 0;
     }
 
-    public static double getArea() {
+    public double getArea() {
         return this.width * this.length;
         // return Math.round(this.width * this.length * 100.0) / 100.0;
     }
-    public static double getPerimeter() {
+    public double getPerimeter() {
         return 2.0 * (this.width + this.length);
         // return Math.round( 2.0 * (this.width + this.length) * 100.0) / 100.0;
     }
@@ -84,3 +84,17 @@ public class Rectangle extends Shape {
             if(!this.topLeft.equals(other.topLeft)) return false;
             return true;
         }
+        else return false;
+    }
+    public int hashCode() {
+        int prime = 19;
+        int result = 1;
+        result = result * prime + Double.valueOf(this.width).hashCode();
+        result = result * prime + Double.valueOf(this.length).hashCode();
+        System.out.println(result * prime + this.topLeft.hashCode());
+        return result * prime + this.topLeft.hashCode();
+    }
+    public String toString() {
+        return "Rectangle[topLeft=" + this.topLeft.toString() + ",width=" + this.width + ",length=" + this.length + ",color=" + this.getColor() + ",filled=" + this.isFilled() + "]";
+    }
+}
