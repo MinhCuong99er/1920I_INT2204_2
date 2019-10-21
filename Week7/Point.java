@@ -1,7 +1,13 @@
 package com.week5;
 import java.lang.*;
 public class Point {
-    protected double x,y;
+    private double x;
+	private double y;
+	
+	public Point (){
+        this.x = 0;
+        this.y = 0;
+    }
     public Point (double _x, double _y){
         this.x = _x;
         this.y = _y;
