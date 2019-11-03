@@ -1,11 +1,13 @@
 <dependencies>
-        <groupId>3junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
-        <scope>test</scope>
-    </dependencies>
+        <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+        </dependency>
+</dependencies>
 
-    <build>
+<build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
