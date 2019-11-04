@@ -23,7 +23,7 @@ public class Division extends BinaryExpression{
         try {
             return left.evaluate() / right.evaluate();
         } catch (ArithmeticException x){
-            System.out.println("Don't dive by zero");
+            System.out.println("Lỗi chia cho 0");
             return -1000000;
         }
     }
