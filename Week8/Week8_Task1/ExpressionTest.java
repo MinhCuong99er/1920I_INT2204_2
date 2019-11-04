@@ -13,7 +13,8 @@ public class ExpressionTest {
         Expression tong = new Addition(hieu,tich);
         Expression bPhuong2 = new Square(tong);
         double result = bPhuong2.evaluate();
-        System.out.println(bPhuong2.toString() + " = " + result);
+        System.out.println(bPhuong2.toString());
+        // System.out.print("([(((10) ^ 2 + -3) + (5 * -3))) ^ ]2");
     }
 }
 
