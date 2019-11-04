@@ -1,6 +1,9 @@
+/**
+ * Created by CCNE on 04/11/2019.
+ */
+import java.awt.*;
 import java.io.*;
-import java.util.*;
-
+import java.util.Scanner;
 public class Week8_Task2 {
     public void NullPoiter () throws NullPointerException {
         //Null poiter
@@ -24,14 +27,14 @@ public class Week8_Task2 {
         System.out.println((Integer) x);
     }
     public void IOErr () throws IOException{
-        File file = new File("C:\\Users\\FPT\\IdeaProjects\\lab08-OOP-1.1\\data.txt");
+        File file = new File("Test.txt");
         FileWriter writer = new FileWriter(file);
         PrintWriter ghi = new PrintWriter(file);
         ghi.print("Hi!");
-        ghi.close();
+        ghi.close(); 
     }
     public void FileNotFound () throws FileNotFoundException {
-        File file = new File("C:\\Users\\FPT\\IdeaProjects\\lab08-OOP-1.1\\data.txt\\hello.txt");
+        File file = new File("Test.txt");
         FileReader reader = new FileReader(file);
     }
     public static void main (String args[]){
@@ -40,40 +43,40 @@ public class Week8_Task2 {
         try {
             goiham.NullPoiter();
         } catch (NullPointerException x){
-            System.out.println("Having an exception : NULL POINTER EXCEPTION !" + "\n");
+            System.out.println("Lỗi Null Pointer" + "\n");
         }
         // ArrayIndexOfBound
         try {
             goiham.ArrayIndexOfBound();
         } catch (ArrayIndexOutOfBoundsException x){
-            System.out.println("Having an exception : ARRAY INDEX OUT OF BOUNDS EXCEPTION ! " + "\n");
+            System.out.println("Lỗi Array Index Out OF Bounds" + "\n");
 
         }
         // ArithmeticErr
         try {
             goiham.ArithmeticErr();
         } catch (ArithmeticException x) {
-            System.out.println("Having an exception : ARITHMETIC EXCEPTION ! " + "\n");
+            System.out.println("Lỗi Arithmetic" + "\n");
         }
-        //ClassCastErr
+        /*//ClassCastErr
         try {
             goiham.ClassCastErr();
         } catch (ClassCastException x) {
             System.out.println("Having an exception : CLASS CAST EXCEPTION ! ");
             System.out.println(x.getMessage() + "\n");
-        }
+        }*/
         //IO Exception
         try {
             goiham.IOErr();
         } catch (IOException x) {
-            System.out.println("Having an exception : IO EXCEPTION ! ");
+            System.out.println("Lỗi IO");
             System.out.println(x.getMessage() + "\n");
         }
         // File not found exception
         try {
             goiham.FileNotFound();
         } catch (FileNotFoundException k) {
-            System.out.println("Having an exception : FILE NOT FOUND EXCEPTION ! ");
+            System.out.println("Lỗi File Not Found");
             System.out.println(k.getMessage());
         }
     }
